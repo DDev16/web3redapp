@@ -1,0 +1,80 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.hm-pg {
+    width: 100%;
+}
+
+.hm-pg::before {
+    content: '';
+    position: absolute;
+    top: 72px;
+    left: 0px;
+    width: 100%;
+    height: 85%;
+    background: url('../../assets/bg.jpg') no-repeat center center/cover;
+    z-index: -100;
+
+}
+
+.homebox {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 162px;
+    margin: auto;
+    width: 60%;
+    height: 70vh;
+}
+
+@media (max-width: 1200px) {
+    .homebox {
+        width: 60%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .homebox {
+        width: 64%;
+    }
+}
+
+@media (max-width: 830px) {
+    .homebox {
+        width: 68%;
+    }
+}
+
+@media (max-width: 456px) {
+    .homebox {
+        width: 80%;
+    }
+}
+
+@media (max-width: 356px) {
+    .homebox {
+        width: 90%;
+    }
+}
+
+@media (max-width: 320px) {
+    .homebox {
+        width: 94%;
+    }
+}
+
+.real-estate-heading {
+    font-size: 3rem; /* This will make the text bigger. Adjust the value as needed. */
+    margin-top: 50px; /* This will push the heading down. Adjust the value as needed. */
+ }
+ 
+
+ .highlight {
+    color: rgb(1, 163, 223) !important;  /* Choose a color that stands out */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Add a text shadow */
+    font-weight: bold; /* Make the text bold */
+  }
+  
+ 
