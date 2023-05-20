@@ -44,21 +44,19 @@ function Navbar() {
                         <Link to="/contact" className="nav-link">
                             Contact
                         </Link>
-                        
+
 
                         <Dropdown>
                             <Dropdown.Toggle variant="success" id="dropdown-basic">
-                                Dashboard
+                                Buy/Rent/Sell
                             </Dropdown.Toggle>
 
                             <Dropdown.Menu>
-                                <Dropdown.Item as={Link} to="/manage-account">My Profile</Dropdown.Item>
-                                <Dropdown.Item as={Link} to="/check-balance">Account Balance</Dropdown.Item>
-                                <Dropdown.Item as={Link} to="/manage-listings">My Properties List</Dropdown.Item>
-                                <Dropdown.Item as={Link} to="/favorites">Favorites</Dropdown.Item>
-                                <Dropdown.Item as={Link} to="/saved-searches">Saved Searches</Dropdown.Item>
-                                <Dropdown.Item as={Link} to="/inbox">Inbox</Dropdown.Item>
-                                <Dropdown.Item as={Link} to="/create-listing">Create Listing</Dropdown.Item>
+                                <Dropdown.Item as={Link} to="/manage-account">Buy</Dropdown.Item>
+                                <Dropdown.Item as={Link} to="/check-balance">Rent</Dropdown.Item>
+                                <Dropdown.Item as={Link} to="/manage-listings">Sell</Dropdown.Item>
+                                <Dropdown.Item as={Link} to="/favorites">Fractionalize</Dropdown.Item>
+                              
 
                             </Dropdown.Menu>
                         </Dropdown>
@@ -77,6 +75,7 @@ function Navbar() {
                                 <Dropdown.Item as={Link} to="/saved-searches">Saved Searches</Dropdown.Item>
                                 <Dropdown.Item as={Link} to="/inbox">Inbox</Dropdown.Item>
                                 <Dropdown.Item as={Link} to="/create-listing">Create Listing</Dropdown.Item>
+                                <Dropdown.Item as={Link} to="/sign-in">Sign in</Dropdown.Item>
 
                             </Dropdown.Menu>
                         </Dropdown>
