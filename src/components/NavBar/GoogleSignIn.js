@@ -10,7 +10,6 @@ import CreateListing from '../User/CreateListing.js';
 import UserContext from '../Utils/UserContext.js';
 import UserAvatar from '../User/UserAvatar.js';
 import { FaHome, FaCar, FaUser, FaBookmark, FaEnvelope, FaHeart, FaPlus } from 'react-icons/fa';
-import '../NavBar/dash.scss'
 
 function SignInWithGoogle() {
   const [user, setUser] = useState(null);
