@@ -28,7 +28,7 @@
 .links-button-section {
   flex-grow: 1;
   display: flex;
-  justify-content: center; /* For logo-container */
+  justify-content: center; 
 }
 
 .navbar-logo {
@@ -139,7 +139,7 @@
   }
   
 
-  // css for dashboard
+  /* // css for dashboard */
 
   /* Add these styles to your CSS file */
 .mobile-sidebar {
