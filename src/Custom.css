@@ -140,5 +140,53 @@
     }
   }
   
+
+  // css for dashboard
+
+  /* Add these styles to your CSS file */
+.mobile-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 300px;
+  background-color: #f0f0f0;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1;
+}
+
+.mobile-sidebar.active {
+  transform: translateX(0);
+}
+
+.mobile-dashboard-toggle {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 16px;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .mobile-dashboard-toggle {
+    display: block;
+  }
+
+  .mobile-sidebar {
+    display: none;
+  }
+
+  .mobile-sidebar.active {
+    display: block;
+  }
+}
+
   
   

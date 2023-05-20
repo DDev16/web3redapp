@@ -79,10 +79,10 @@ function LandingPage(props) {
     
     <Container>
       <Home />
-      <Col>
+      
         <GoogleMap googleApiKey={googleApiKey} center={center} zoom={zoom} />
 
-      </Col>
+      
       <Row>
     
         <Col md={6}>
