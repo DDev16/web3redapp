@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Container, Nav, Navbar as BootstrapNavbar, Button } from 'react-bootstrap';
+import { Container, Nav, Navbar as BootstrapNavbar, Button, Dropdown } from 'react-bootstrap';
 import logo from '../assets/logo.png';
 import { useWeb3 } from '../../web3Context';
 
@@ -44,9 +44,20 @@ function Navbar() {
                         <Link to="/contact" className="nav-link">
                             Contact
                         </Link>
-                        <Link to="/dashboard" className="nav-link">
-                            Dashboard
-                        </Link>
+
+                        <Dropdown>
+                            <Dropdown.Toggle variant="success" id="dropdown-basic">
+                                Dashboard
+                            </Dropdown.Toggle>
+
+                            <Dropdown.Menu>
+                                <Dropdown.Item as={Link} to="/manage-account">Manage Account</Dropdown.Item>
+                                <Dropdown.Item as={Link} to="/check-balance">Check Balance</Dropdown.Item>
+                                <Dropdown.Item as={Link} to="/manage-listings">Manage Listings and Rentals</Dropdown.Item>
+                                <Dropdown.Item as={Link} to="/account-info">Account Info</Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown>
+                        
                         <Button variant="outline-light" className="ms-2" onClick={handleConnect}>
                             {account ? 'Connected' : 'Connect'}
                         </Button>
