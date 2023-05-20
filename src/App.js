@@ -9,7 +9,7 @@ import { Web3Provider } from './web3Context';
 import PropertyList from './components/PropertyList/PropertyList';
 import PropertyDetails from './components/PropertyDetails/PropertyDetails';
 import SignInWithGoogle from './components/NavBar/GoogleSignIn';
-import './components/NavBar/dash.scss';
+import './components/NavBar/dash.css';
 
 function App() {
   return (
