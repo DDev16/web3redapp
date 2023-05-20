@@ -7,6 +7,8 @@ import UserSavedSearches from '../User/UserSavedSearches.js';
 import Inbox from '../User/Inbox.js';
 import Favorites from '../User/UserFavorites.js';
 import CreateListing from '../User/CreateListing.js';   
+import UserContext from '../Utils/UserContext.js';
+import UserAvatar from '../User/UserAvatar.js';
 
 function SignInWithGoogle() {
   const [user, setUser] = useState(null);
@@ -30,29 +32,35 @@ function SignInWithGoogle() {
     });
   };
 
-  return (
-    <div>
-      { user ? (
-        <div>
-          <CreateListing user={user} />
-          <UserListings user={user} />
-          <UserRentals user={user} />
-          <UserProfile user={user} />
-          <Inbox user={user} />
-          <Favorites user={user} />
-          <UserSavedSearches user={user} />
 
-          <button onClick={() => signOut(auth)}>
-            Sign Out
-          </button>
+    return (
+        <div>
+          { user ? (
+              <UserContext.Provider value={user}>
+                <div>
+                  <h2>Welcome to your Dashboard, {user.displayName}!</h2>
+                  <UserAvatar user={user} />
+
+                  <CreateListing user={user} />
+                  <UserListings user={user} />
+                  <UserRentals user={user} />
+                  <UserProfile user={user} />
+                  <Inbox user={user} />
+                  <Favorites user={user} />
+                  <UserSavedSearches user={user} />
+      
+                  <button onClick={() => signOut(auth)}>
+                    Sign Out
+                  </button>
+                </div>
+              </UserContext.Provider>
+          ) : (
+            <button onClick={signIn}>
+              Sign In with Google
+            </button>
+          )}
         </div>
-      ) : (
-        <button onClick={signIn}>
-          Sign In with Google
-        </button>
-      )}
-    </div>
-  );
+      );
 }
 
 export default SignInWithGoogle;
