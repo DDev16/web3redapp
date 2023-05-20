@@ -31,3 +31,8 @@ body {
   -o-background-size: cover;
   background-size: cover;
 }
+
+.cube-container {
+  position: relative;
+  height: 500px; 
+}

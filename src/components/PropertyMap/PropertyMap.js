@@ -1,6 +1,6 @@
 import React from 'react';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
-import styles from './PropertyMap.module.css';
+import styles from '../PropertyMap/PropertyMap.module.css';
 import { googleApiKey } from '../../config.js';
 
 

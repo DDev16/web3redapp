@@ -2,9 +2,9 @@ import React, { useEffect, useRef } from 'react';
 import useScript from './useScript';
 import './GoogleMap.css';
 
-const GoogleMap = ({ apiKey, center, zoom }) => {
+const GoogleMap = ({ googleApiKey, center, zoom }) => {
   const mapRef = useRef(null);
-  const isScriptLoaded = useScript(`https://maps.googleapis.com/maps/api/js?key=${apiKey}`);
+  const isScriptLoaded = useScript(`https://maps.googleapis.com/maps/api/js?key=${googleApiKey}`);
 
   useEffect(() => {
     if (!mapRef.current || !isScriptLoaded) return;

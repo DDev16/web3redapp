@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import {
   Container,
@@ -18,9 +18,10 @@ import realEstateImage3 from '../assets/real-estate-image-3.jpg';
 import agentImage1 from '../assets/agent-image-1.jpg';
 import agentImage2 from '../assets/agent-image-2.jpg';
 import agentImage3 from '../assets/agent-image-3.jpg';
-import GoogleMap from '../components/map/GoogleMap.js';
-import { googleApiKey } from '../config.js';
-import Home from '../components/Home/Index.jsx';
+import GoogleMap from '../map/GoogleMap.js';
+import { googleApiKey } from '../../config.js';
+import Home from '../Home/Index.jsx';
+
 
 
 function LandingPage(props) {
@@ -73,14 +74,11 @@ function LandingPage(props) {
   const center = { lat: 34.474876, lng: -114.34321 }; // Change these coordinates to the desired location
   const zoom = 13;
   
-  
-
   return (
     
     
     <Container>
       <Home />
-   
       <Row>
         
 
@@ -113,10 +111,7 @@ function LandingPage(props) {
 </Carousel.Item>
 </Carousel>
 </Col>
-<Col>
-        <h2 className="text-center my-5">Houses for Rent</h2>
-        <GoogleMap googleApiKey={googleApiKey} center={center} zoom={zoom} />
-      </Col>
+
 <Col md={6}>
 <Card className="p-4 newsletter-card">
 <Card.Title>Subscribe to Our Newsletter</Card.Title>
@@ -139,6 +134,14 @@ Submit
 {message && <p className="text-danger">{message}</p>}
 </Card>
 </Col>
+<h2 className="text-center my-5">Search Homes</h2>
+
+
+<Col>
+        <GoogleMap googleApiKey={googleApiKey} center={center} zoom={zoom} />
+
+      </Col>
+
 </Row>
 <h2 className="text-center my-5">Featured Properties</h2>
 <Row>
@@ -167,15 +170,15 @@ Submit
        />
 </Col>
 </Row>
-<h2 className="text-center my-5">Meet Our Agents</h2>
+<h2 className="text-center my-5">Meet Our Team</h2>
 <Row>
 <Col md={4}>
 <AgentCard
          imgSrc={agentImage1}
-         name="Agent Name 1"
-         title="Real Estate Agent"
-         phone="(555) 555-1234"
-         email="agent1@example.com"
+     name="Dillon Devera"
+         title="CEO / Founder / Front/Back End Developer"
+         phone="(307) 220-8225"
+         email="Web3RealtyAgency@gmail.com"
        />
 </Col>
 <Col md={4}>

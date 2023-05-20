@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import NavigationBar from './components/NavigationBar';
-import LandingPage from './components/LandingPage';
+import NavigationBar from './components/NavBar/NavigationBar';
+import LandingPage from './components/Landing/LandingPage.js';
 import ThankYouPage from './components/ThankYouPage';
-import Footer from './components/Footer';
+import Footer from './components/Footer/Footer';
 import './Custom.css';
 import { Web3Provider } from './web3Context';
 import PropertyList from './components/PropertyList/PropertyList';

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
-import styles from './PropertyList.module.css';
+import styles from '../PropertyList/PropertyList.module.css';
 import { Link } from 'react-router-dom';
 import SearchBar from '../SearchBar/SearchBar';
-import realEstateImage1 from '../../assets/real-estate-image-1.jpg';
+import realEstateImage1 from '../assets/real-estate-image-1.jpg';
 
 
 const properties = [
