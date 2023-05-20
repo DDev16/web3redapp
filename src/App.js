@@ -8,6 +8,7 @@ import './Custom.css';
 import { Web3Provider } from './web3Context';
 import PropertyList from './components/PropertyList/PropertyList';
 import PropertyDetails from './components/PropertyDetails/PropertyDetails';
+import SignInWithGoogle from './components/NavBar/GoogleSignIn';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/properties" element={<PropertyList />} />
         <Route path="/thankyou" element={<ThankYouPage />} />
         <Route path="/properties/:id" element={<PropertyDetails />} />
+        <Route path="/sign-in" element={<SignInWithGoogle />} />
       </Routes>
       <Footer />
     </Router>

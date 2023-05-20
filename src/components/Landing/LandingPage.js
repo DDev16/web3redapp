@@ -79,9 +79,12 @@ function LandingPage(props) {
     
     <Container>
       <Home />
-      <Row>
-        
+      <Col>
+        <GoogleMap googleApiKey={googleApiKey} center={center} zoom={zoom} />
 
+      </Col>
+      <Row>
+    
         <Col md={6}>
           <Carousel>
             <Carousel.Item>
@@ -134,13 +137,6 @@ Submit
 {message && <p className="text-danger">{message}</p>}
 </Card>
 </Col>
-<h2 className="text-center my-5">Search Homes</h2>
-
-
-<Col>
-        <GoogleMap googleApiKey={googleApiKey} center={center} zoom={zoom} />
-
-      </Col>
 
 </Row>
 <h2 className="text-center my-5">Featured Properties</h2>

@@ -45,16 +45,13 @@ function Home() {
     <span className="navbar-title">Web3 Realty</span>
     <img src={logo} alt="Logo" className="navbar-logo1" />
 </Link>
-      <Search showUP780={showUP780} showDown780px={showDown780px} />
-
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        <IoIosArrowDropdownCircle style={{ height: '20px', width: '20px' }} className='text-black animate-bounce' />
-      </div>
+<Search showUP780={showUP780} showDown780px={showDown780px}  margin= '50px 10px 10px auto'  />
 
       <Container
         sx={{
-          margin: '200px auto 10px auto',
+          margin: '50px 10px 10px auto',
         }}>
+
 
       </Container>
     </div>

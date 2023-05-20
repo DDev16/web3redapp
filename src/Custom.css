@@ -34,8 +34,9 @@
 }
 
 .navbar-logo {
-  height: 50px;
+  height: 70px;
   margin-left: 400px;
+  
 }
 
 /* For tablets */
@@ -52,18 +53,6 @@
     height: 30px;
     margin-left: 50px;
   }
-}
-
-
-
-.logo-container {
-  display: flex;
-  justify-content: center;
-  flex-grow: 1;
-}
-
-.navbar-logo {
-  height: 50px;
 }
 
 
