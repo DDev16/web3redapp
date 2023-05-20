@@ -1,5 +1,7 @@
-import React from 'react';
+// App.js
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { auth } from './components/NavBar/firebase.js';
 import NavigationBar from './components/NavBar/NavigationBar';
 import LandingPage from './components/Landing/LandingPage.js';
 import ThankYouPage from './components/ThankYouPage';
@@ -10,22 +12,40 @@ import PropertyList from './components/PropertyList/PropertyList';
 import PropertyDetails from './components/PropertyDetails/PropertyDetails';
 import SignInWithGoogle from './components/NavBar/GoogleSignIn';
 import './components/NavBar/dash.css';
+import UserContext from './components/Utils/UserContext.js';
 
 function App() {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        const { displayName, email, photoURL } = user;
+        setUser({ displayName, email, photoURL });
+      } else {
+        setUser(null);
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
+
   return (
-    <Web3Provider>
-    <Router>
-      <NavigationBar />
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/properties" element={<PropertyList />} />
-        <Route path="/thankyou" element={<ThankYouPage />} />
-        <Route path="/properties/:id" element={<PropertyDetails />} />
-        <Route path="/sign-in" element={<SignInWithGoogle />} />
-      </Routes>
-      <Footer />
-    </Router>
-    </Web3Provider>
+    <UserContext.Provider value={user}>
+      <Web3Provider>
+        <Router>
+          <NavigationBar />
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/properties" element={<PropertyList />} />
+            <Route path="/thankyou" element={<ThankYouPage />} />
+            <Route path="/properties/:id" element={<PropertyDetails />} />
+            <Route path="/sign-in" element={<SignInWithGoogle />} />
+          </Routes>
+          <Footer />
+        </Router>
+      </Web3Provider>
+    </UserContext.Provider>
   );
 }
 

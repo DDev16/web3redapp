@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+// SignInWithGoogle.js
+import React, { useState, useEffect, useContext } from 'react';
+import { useMediaQuery } from 'react-responsive';
 import { auth, googleAuthProvider, signInWithPopup, signOut } from '../NavBar/firebase.js';
 import UserListings from '../User/UserListings.js';
 import UserRentals from '../User/UserRentals.js';
@@ -9,24 +11,23 @@ import Favorites from '../User/UserFavorites.js';
 import CreateListing from '../User/CreateListing.js';
 import UserContext from '../Utils/UserContext.js';
 import UserAvatar from '../User/UserAvatar.js';
-import { FaHome, FaCar, FaUser, FaBookmark, FaEnvelope, FaHeart, FaPlus } from 'react-icons/fa';
+import { FaHome, FaCar, FaUser, FaBookmark, FaEnvelope, FaHeart, FaPlus, FaBars } from 'react-icons/fa';
 
 function SignInWithGoogle() {
-  const [user, setUser] = useState(null);
+  const user = useContext(UserContext);
   const [activeTab, setActiveTab] = useState('listings');
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const isMobile = useMediaQuery({ query: `(max-width: 768px)` });
 
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
-      if (user) {
-        const { displayName, email, photoURL } = user;
-        setUser({ displayName, email, photoURL });
-      } else {
-        setUser(null);
-      }
-    });
+    if (!isMobile) {
+      setSidebarOpen(true);
+    }
+  }, [isMobile]);
 
-    return () => unsubscribe();
-  }, []);
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
 
   const signIn = () => {
     signInWithPopup(auth, googleAuthProvider).catch((error) => {
@@ -60,10 +61,16 @@ function SignInWithGoogle() {
   };
 
   return (
-    <div className="dashboard-container">
+    <div className={`dashboard-container ${sidebarOpen ? 'sidebar-open' : 'sidebar-closed'}`}>
       {user ? (
-        <UserContext.Provider value={user}>
-          <div className="sidebar">
+        <>
+          {isMobile && (
+            <button className="sidebar-toggle-btn" onClick={toggleSidebar}>
+              <FaBars />
+            </button>
+          )}
+
+          <div className={`sidebar ${sidebarOpen ? 'open' : 'closed'}`}>
             <h2 className="welcome-message">Welcome to your Dashboard, {user.displayName}!</h2>
             <UserAvatar user={user} className="user-avatar" />
 
@@ -139,7 +146,7 @@ function SignInWithGoogle() {
           </div>
 
           <div className="content">{renderActiveTab()}</div>
-        </UserContext.Provider>
+        </>
       ) : (
         <button className="sign-in-btn" onClick={signIn}>Sign In with Google</button>
       )}

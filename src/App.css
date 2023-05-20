@@ -2,7 +2,7 @@
 
 .App {
   text-align: center;
-  width: 80%;  /* Set the width to desired percentage */
+  width: 100%;  /* Set the width to desired percentage */
   margin: 0 auto;  /* Center the container */
   box-sizing: border-box; /* Include padding and border in the element's total width and height */
   background-image: url('/bg.jpg'); /* Add this line */
