@@ -35,8 +35,25 @@
 
 .navbar-logo {
   height: 50px;
-  margin-left:200px;
+  margin-left: 400px;
 }
+
+/* For tablets */
+@media (max-width: 768px) {
+  .navbar-logo {
+    height: 40px;
+    margin-left: 200px;
+  }
+}
+
+/* For mobile phones */
+@media (max-width: 480px) {
+  .navbar-logo {
+    height: 30px;
+    margin-left: 50px;
+  }
+}
+
 
 
 .logo-container {

@@ -24,7 +24,7 @@ function Navbar() {
     return (
         <BootstrapNavbar expand="lg" className="custom-navbar">
             <Container>
-                <Link to="/" className="navbar-brand logo-container">
+                <Link to="/" className="">
                     <span className="navbar-title">Web3 Realty</span>
                     <img src={logo} alt="Logo" className="navbar-logo" />
                 </Link>

@@ -5,6 +5,8 @@ import '../hero/Hero.css';
 import { IoIosArrowDropdownCircle } from 'react-icons/io';
 import Search from '../Home/Searchbar2.js';
 import { useMediaQuery } from '@mui/material';
+import logo from '../assets/logo.png';
+import { Link } from 'react-router-dom';
 
 
 
@@ -39,6 +41,10 @@ function Home() {
           <em className="highlight">{words[wordIndex]}</em>
         </h1>
       </div>
+      <Link to="/" className="navbar-brand logo-container1">
+    <span className="navbar-title">Web3 Realty</span>
+    <img src={logo} alt="Logo" className="navbar-logo1" />
+</Link>
       <Search showUP780={showUP780} showDown780px={showDown780px} />
 
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
