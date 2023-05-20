@@ -25,7 +25,19 @@ function Navbar() {
         <BootstrapNavbar expand="lg" className="custom-navbar">
             <Container>
                 <Link to="/" className="">
-                    <span className="navbar-title">Web3 Realty</span>
+
+                <span className="navbar-title">
+  <strong>
+    <span style={{
+      textShadow: '0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 15px #00ffff, 0 0 20px #00ffff, 0 0 25px #00ffff, 0 0 30px #00ffff, 0 0 35px #00ffff, 0 0 2px black'
+    }}>
+      Web3
+    </span>
+  </strong>
+  Realty
+</span>
+
+
                     <img src={logo} alt="Logo" className="navbar-logo" />
                 </Link>
 
@@ -83,6 +95,7 @@ function Navbar() {
                         <Button variant="outline-light" className="ms-2" onClick={handleConnect}>
                             {account ? 'Connected' : 'Connect'}
                         </Button>
+
                     </Nav>
                 </BootstrapNavbar.Collapse>
             </Container>

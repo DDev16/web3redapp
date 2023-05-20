@@ -2,25 +2,28 @@
   display: flex;
   justify-content: flex-start;
   align-items: stretch;
-  height: 100vh;
+  height: 150vh; /* Modified from 100vh to 150vh as per your last definition */
   background-color: #f7f7f7;
   overflow-x: hidden;
   position: relative;
 }
 
 .sidebar {
-  width: 250px;
+  flex: 0 0 250px;
+  height: 100%;
   background-color: #2196f3;
   padding: 20px;
   color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: transform 0.3s ease-in-out;
+  transition: flex 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .sidebar-closed .sidebar {
+  flex: 0 0 0px;
   transform: translateX(-100%);
+  overflow: hidden;
 }
 
 .sidebar-toggle-btn {
@@ -89,7 +92,6 @@
   transition: margin-left 0.3s ease-in-out;
 }
 
-
 .sidebar-closed .content {
   margin-left: 0;
 }
@@ -114,55 +116,3 @@
 .sign-out-btn:hover {
   background-color: #0d47a1;
 }
-
-
-.dashboard-container {
-  display: flex;
-  justify-content: flex-start;
-  align-items: stretch;
-  height: 100vh;
-  background-color: #f7f7f7;
-  overflow-x: hidden;
-  position: relative;
-}
-
-.sidebar {
-  flex: 0 0 250px;
-  background-color: #2196f3;
-  padding: 20px;
-  color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: flex 0.3s ease-in-out;
-}
-
-.sidebar-closed .sidebar {
-  flex: 0 0 0px;
-  overflow: hidden;
-}
-
-.sidebar-toggle-btn {
-  display: none;
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background: none;
-  border: none;
-  color: #2196f3;
-  font-size: 24px;
-  cursor: pointer;
-  z-index: 1;
-}
-
-.sidebar-open .sidebar-toggle-btn {
-  color: #ffffff;
-}
-
-@media (max-width: 768px) {
-  .sidebar-toggle-btn {
-    display: block;
-  }
-}
-
-
