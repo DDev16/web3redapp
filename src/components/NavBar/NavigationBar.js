@@ -44,6 +44,7 @@ function Navbar() {
                         <Link to="/contact" className="nav-link">
                             Contact
                         </Link>
+                        
 
                         <Dropdown>
                             <Dropdown.Toggle variant="success" id="dropdown-basic">
@@ -51,10 +52,32 @@ function Navbar() {
                             </Dropdown.Toggle>
 
                             <Dropdown.Menu>
-                                <Dropdown.Item as={Link} to="/manage-account">Manage Account</Dropdown.Item>
-                                <Dropdown.Item as={Link} to="/check-balance">Check Balance</Dropdown.Item>
-                                <Dropdown.Item as={Link} to="/manage-listings">Manage Listings and Rentals</Dropdown.Item>
-                                <Dropdown.Item as={Link} to="/account-info">Account Info</Dropdown.Item>
+                                <Dropdown.Item as={Link} to="/manage-account">My Profile</Dropdown.Item>
+                                <Dropdown.Item as={Link} to="/check-balance">Account Balance</Dropdown.Item>
+                                <Dropdown.Item as={Link} to="/manage-listings">My Properties List</Dropdown.Item>
+                                <Dropdown.Item as={Link} to="/favorites">Favorites</Dropdown.Item>
+                                <Dropdown.Item as={Link} to="/saved-searches">Saved Searches</Dropdown.Item>
+                                <Dropdown.Item as={Link} to="/inbox">Inbox</Dropdown.Item>
+                                <Dropdown.Item as={Link} to="/create-listing">Create Listing</Dropdown.Item>
+
+                            </Dropdown.Menu>
+                        </Dropdown>
+
+
+                        <Dropdown>
+                            <Dropdown.Toggle variant="success" id="dropdown-basic">
+                                Dashboard
+                            </Dropdown.Toggle>
+
+                            <Dropdown.Menu>
+                                <Dropdown.Item as={Link} to="/manage-account">My Profile</Dropdown.Item>
+                                <Dropdown.Item as={Link} to="/check-balance">Account Balance</Dropdown.Item>
+                                <Dropdown.Item as={Link} to="/manage-listings">My Properties List</Dropdown.Item>
+                                <Dropdown.Item as={Link} to="/favorites">Favorites</Dropdown.Item>
+                                <Dropdown.Item as={Link} to="/saved-searches">Saved Searches</Dropdown.Item>
+                                <Dropdown.Item as={Link} to="/inbox">Inbox</Dropdown.Item>
+                                <Dropdown.Item as={Link} to="/create-listing">Create Listing</Dropdown.Item>
+
                             </Dropdown.Menu>
                         </Dropdown>
                         
