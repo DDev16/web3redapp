@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { Container, Nav, Navbar as BootstrapNavbar, Button, Dropdown } from 'react-bootstrap';
 import logo from '../assets/logo.png';
 import { useWeb3 } from '../../web3Context';
-
 function Navbar() {
 
     const { web3, account } = useWeb3();
@@ -59,38 +58,34 @@ function Navbar() {
 
 
                         <Dropdown>
-                            <Dropdown.Toggle variant="success" id="dropdown-basic">
-                                Buy/Rent/Sell
-                            </Dropdown.Toggle>
+    <Dropdown.Toggle variant="info" id="dropdown-basic" className="btn-outline-light">
+        Buy/Rent/Sell
+    </Dropdown.Toggle>
 
-                            <Dropdown.Menu>
-                                <Dropdown.Item as={Link} to="/manage-account">Buy</Dropdown.Item>
-                                <Dropdown.Item as={Link} to="/check-balance">Rent</Dropdown.Item>
-                                <Dropdown.Item as={Link} to="/manage-listings">Sell</Dropdown.Item>
-                                <Dropdown.Item as={Link} to="/favorites">Fractionalize</Dropdown.Item>
-                              
+    <Dropdown.Menu>
+        <Dropdown.Item className="bg-light" as={Link} to="/manage-account">Buy</Dropdown.Item>
+        <Dropdown.Item className="bg-light" as={Link} to="/check-balance">Rent</Dropdown.Item>
+        <Dropdown.Item className="bg-light" as={Link} to="/manage-listings">Sell</Dropdown.Item>
+        <Dropdown.Item className="bg-light" as={Link} to="/favorites">Fractionalize</Dropdown.Item>
+    </Dropdown.Menu>
+</Dropdown>
 
-                            </Dropdown.Menu>
-                        </Dropdown>
+<Dropdown>
+    <Dropdown.Toggle variant="info" id="dropdown-basic" className="btn-outline-light">
+        Dashboard
+    </Dropdown.Toggle>
 
-
-                        <Dropdown>
-                            <Dropdown.Toggle variant="success" id="dropdown-basic">
-                                Dashboard
-                            </Dropdown.Toggle>
-
-                            <Dropdown.Menu>
-                                <Dropdown.Item as={Link} to="/manage-account">My Profile</Dropdown.Item>
-                                <Dropdown.Item as={Link} to="/check-balance">Account Balance</Dropdown.Item>
-                                <Dropdown.Item as={Link} to="/manage-listings">My Properties List</Dropdown.Item>
-                                <Dropdown.Item as={Link} to="/favorites">Favorites</Dropdown.Item>
-                                <Dropdown.Item as={Link} to="/saved-searches">Saved Searches</Dropdown.Item>
-                                <Dropdown.Item as={Link} to="/inbox">Inbox</Dropdown.Item>
-                                <Dropdown.Item as={Link} to="/create-listing">Create Listing</Dropdown.Item>
-                                <Dropdown.Item as={Link} to="/sign-in">Sign in</Dropdown.Item>
-
-                            </Dropdown.Menu>
-                        </Dropdown>
+    <Dropdown.Menu>
+        <Dropdown.Item className="bg-light" as={Link} to="/manage-account">My Profile</Dropdown.Item>
+        <Dropdown.Item className="bg-light" as={Link} to="/check-balance">Account Balance</Dropdown.Item>
+        <Dropdown.Item className="bg-light" as={Link} to="/manage-listings">My Properties List</Dropdown.Item>
+        <Dropdown.Item className="bg-light" as={Link} to="/favorites">Favorites</Dropdown.Item>
+        <Dropdown.Item className="bg-light" as={Link} to="/saved-searches">Saved Searches</Dropdown.Item>
+        <Dropdown.Item className="bg-light" as={Link} to="/inbox">Inbox</Dropdown.Item>
+        <Dropdown.Item className="bg-light" as={Link} to="/create-listing">Create Listing</Dropdown.Item>
+        <Dropdown.Item className="bg-light" as={Link} to="/sign-in">Sign in</Dropdown.Item>
+    </Dropdown.Menu>
+</Dropdown>
                         
                         <Button variant="outline-light" className="ms-2" onClick={handleConnect}>
                             {account ? 'Connected' : 'Connect'}

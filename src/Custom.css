@@ -187,4 +187,15 @@
 }
 
   
-  
+  /* Example CSS for the Dropdown.Toggle component */
+.dropdown-toggle {
+  background-color: #28a745; /* Background color */
+  color: #fff; /* Text color */
+  border: none; /* Remove border */
+  padding: 10px 15px; /* Padding around the text */
+  cursor: pointer; /* Show pointer cursor on hover */
+}
+
+.dropdown-toggle:hover {
+  background-color: #218838; /* Background color on hover */
+}
