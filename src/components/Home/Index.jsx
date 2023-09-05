@@ -1,20 +1,11 @@
 import { useState, useEffect } from 'react';
-import { Container } from '@mui/material';
 import './Index.scss';
-import '../hero/Hero.css';
-import { IoIosArrowDropdownCircle } from 'react-icons/io';
-import Search from '../Home/Searchbar2.js';
-import { useMediaQuery } from '@mui/material';
 import logo from '../assets/logo.png';
 import { Link } from 'react-router-dom';
 
-
-
 function Home() {
-  const showUP780 = useMediaQuery('(min-Width: 780px)');
-  const showDown780px = useMediaQuery('(max-width: 780px)');
-
   const [wordIndex, setWordIndex] = useState(0);
+
   const words = [
     'Smart Contracts',
     'Blockchain',
@@ -31,31 +22,19 @@ function Home() {
     return () => clearInterval(interval);
   }, []);
 
-
-
- return (
+  return (
     <div className='hm-pg'>
-      <div className='my-auto'>
+      <div className='my-auto fade-in'>
         <h1 className='real-estate-heading text-5xl font-black tracking-tight text-center text-white sm:text-6xl md:max-w-lg lg:text-7xl leading-90p text-effect'>
           Revolutionizing Real Estate With <br />
           <em className="highlight">{words[wordIndex]}</em>
         </h1>
       </div>
-      <Link to="/" className="navbar-brand logo-container1">
-    <span className="navbar-title">Web3 Realty</span>
-    <img src={logo} alt="Logo" className="navbar-logo1" />
-</Link>
-<Search showUP780={showUP780} showDown780px={showDown780px}  margin= '50px 10px 10px auto'  />
-
-      <Container
-        sx={{
-          margin: '50px 10px 10px auto',
-        }}>
-
-
-      </Container>
+      <Link to="/" className="navbar-brand logo-container1 fade-in">
+        <img src={logo} alt="Logo" className="navbar-logo1" />
+      </Link>
     </div>
-  )
+  );
 }
 
 export default Home;

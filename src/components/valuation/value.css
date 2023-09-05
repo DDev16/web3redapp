@@ -1,0 +1,102 @@
+/* Styling for the entire Home Valuation container */
+.home-valuation-container {
+    background-image: url('../../components/assets/d.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 30px;
+    width: 100%;
+    height: 700px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); 
+  }
+  
+  /* Styling for the top divider */
+  .home-valuation-divider-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px; /* Adjust the height of the divider */
+    background: linear-gradient(to top, transparent, #f5f5f5); /* Fading from the top */
+    z-index: 1; /* Ensure the divider is above the container content */
+  }
+  
+  /* Styling for the bottom divider */
+  .home-valuation-divider-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    
+    width: 100%;
+    height: 80px; /* Adjust the height of the divider */
+    background: linear-gradient(to bottom, transparent, #f5f5f5); /* Fading from the top */
+    z-index: 1; /* Ensure the divider is above the container content */
+  }
+  
+  /* Styling for the h1 element */
+.home-valuation-container h1 {
+    color: #fff;
+    font-size: 48px;
+    background: linear-gradient(to top, transparent, #f5f5f5); /* Fading from the top */
+    margin-bottom: 20px;
+    font-family: "Arial", sans-serif; /* Choose a suitable font family */
+    text-align: center; /* Center-align the text */
+    text-transform: uppercase; /* Transform text to uppercase */
+    letter-spacing: 2px; /* Add letter spacing for a bold look */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); /* Add a subtle text shadow */
+    line-height: 1.2; /* Adjust line height for better readability */
+    border-radius: 5px;
+
+    
+  }
+  
+  
+  /* Styling for the label and input elements */
+  .home-valuation-container label {
+    display: block;
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 18px;
+    
+  }
+  
+  .home-valuation-container input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #555;
+  }
+  
+  /* Styling for the button element */
+  .home-valuation-container button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .home-valuation-container button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Styling for the result paragraph */
+  .home-valuation-container p {
+    font-size: 20px;
+    margin-top: 20px;
+    color: #333;
+    background-color: #ffffff;
+
+  }
+  

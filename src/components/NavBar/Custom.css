@@ -1,0 +1,153 @@
+
+
+.custom-navbar {
+  background: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+
+.custom-navbar.opaque {
+  background: linear-gradient(to right, rgba(28, 35, 49, 0.9), rgba(58, 123, 213, 0.9), rgba(137, 207, 240, 0.9));
+}
+
+
+
+
+
+
+
+.logo-container,
+.links-button-section {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  margin-right: 20px;
+
+}
+
+.navbar-logo {
+  height: 70px;
+  margin-right: 50px;
+  
+}
+
+/* For tablets */
+@media (max-width: 768px) {
+  .navbar-logo {
+    height: 40px;
+    margin-left: 200px;
+  }
+}
+
+/* For mobile phones */
+@media (max-width: 480px) {
+  .navbar-logo {
+    height: 30px;
+    margin-left: 50px;
+  }
+}
+
+
+  
+  
+  /* Footer */
+  .footer {
+    background-color: #1c2331;
+    color: #fff;
+    padding: 20px 0;
+    margin-top: 40px;
+  }
+  
+  .link {
+    color: black;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    z-index:999;
+    margin-left:320px;
+    margin-top:-60px;
+  }
+  
+ /* Define a base style for your links */
+/* Define a base style for your links */
+.nav-link {
+  color: black !important; /* Change to your desired default link color */
+  text-decoration: none; /* Remove underlines */
+  transition: color 0.3s, border-bottom 0.3s, box-shadow 0.3s; /* Add smooth transitions for color, underline, and shadow */
+  padding: 3px 0; /* Add some padding to give links more space */
+  text-shadow: 0 2px 4px rgba(255, 255, 255, 1); /* Add a white shadow on hover */
+  
+}
+
+/* Style the links on hover */
+.nav-link:hover {
+  color: blue !important; /* Change to your desired link color on hover */
+  border-bottom: 2px solid blue; /* Update the underline color to blue on hover */
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.5); /* Add a white shadow on hover */
+}
+
+
+
+
+  
+
+
+  .navbar-title {
+    font-size: 2.5em; /* Increase font size */
+    color: #ffffff; /* Change font color to white */
+    text-shadow: 2px 2px #000000; /* Add text shadow */
+    font-family: 'Arial', sans-serif; /* Change font family */
+    padding: 10px; /* Add padding */
+    border-radius: 8px;
+    
+}
+
+  
+  @media (max-width: 767.98px) {
+    .navbar-title {
+      display: none;
+    }
+  }
+  
+
+  /* // css for dashboard */
+
+
+
+
+
+
+  
+  /* Example CSS for the Dropdown.Toggle component */
+.dropdown-toggle {
+  background-color: black !important; /* Background color */
+  color: #fff; /* Text color */
+  border: none; /* Remove border */
+  padding: 10px 15px; /* Padding around the text */
+  cursor: pointer; /* Show pointer cursor on hover */
+}
+
+.dropdown-toggle:hover {
+  background-color: #333 !important;
+  color: #fff !important;/* Background color on hover */
+}
+
+@media (max-width: 768px) {
+  .mobile-dashboard-toggle {
+    display: block;
+  }
+
+  .mobile-sidebar {
+    display: none;
+  }
+
+  .mobile-sidebar.active {
+    display: block;
+  }
+}
+
+
+
