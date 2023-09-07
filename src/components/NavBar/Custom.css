@@ -73,21 +73,28 @@
   
  /* Define a base style for your links */
 /* Define a base style for your links */
+/* Style the links as buttons */
 .nav-link {
-  color: black !important; /* Change to your desired default link color */
-  text-decoration: none; /* Remove underlines */
-  transition: color 0.3s, border-bottom 0.3s, box-shadow 0.3s; /* Add smooth transitions for color, underline, and shadow */
-  padding: 3px 0; /* Add some padding to give links more space */
-  text-shadow: 0 2px 4px rgba(255, 255, 255, 1); /* Add a white shadow on hover */
-  
+  display: inline-block; /* Make the links block elements */
+  padding: 10px 20px; /* Add padding to create a button-like appearance */
+  background: linear-gradient(to bottom, #b3e0ff, #66b3ff); /* Light blue gradient */
+  color: white;
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s, border 0.3s, box-shadow 0.3s;
+  border: 1px solid #66b3ff; /* Add a border to the buttons */
+  border-radius: 5px; /* Round the corners */
+  text-shadow: 0 2px 4px rgba(255, 255, 255, 1);
+  cursor: pointer; /* Change cursor to pointer on hover */
 }
 
-/* Style the links on hover */
+/* Style the buttons on hover */
 .nav-link:hover {
-  color: blue !important; /* Change to your desired link color on hover */
-  border-bottom: 2px solid blue; /* Update the underline color to blue on hover */
-  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.5); /* Add a white shadow on hover */
+  background: linear-gradient(to bottom, #66b3ff, #b3e0ff); /* Reverse the gradient on hover */
+  color: white;
+  border: 1px solid #66b3ff;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
 }
+
 
 
 
@@ -96,7 +103,7 @@
 
 
   .navbar-title {
-    font-size: 2.5em; /* Increase font size */
+    font-size: 2.0em; /* Increase font size */
     color: #ffffff; /* Change font color to white */
     text-shadow: 2px 2px #000000; /* Add text shadow */
     font-family: 'Arial', sans-serif; /* Change font family */
@@ -121,19 +128,43 @@
 
 
   
-  /* Example CSS for the Dropdown.Toggle component */
+/* Example CSS for the Dropdown.Toggle component */
 .dropdown-toggle {
-  background-color: black !important; /* Background color */
-  color: #fff; /* Text color */
-  border: none; /* Remove border */
-  padding: 10px 15px; /* Padding around the text */
-  cursor: pointer; /* Show pointer cursor on hover */
+  background: linear-gradient(to bottom, #66b3ff, #b3e0ff); /* Reverse the gradient on hover */
+  color: #fff !important;
+  border: none !important;
+  padding: 10px 15px !important;
+  cursor: pointer !important;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  width:160px;
 }
 
 .dropdown-toggle:hover {
   background-color: #333 !important;
-  color: #fff !important;/* Background color on hover */
+  color: #fff !important;
 }
+
+/* For mobile phones */
+@media (max-width: 480px) {
+  .navbar-logo {
+    height: 30px;
+    margin-left: 20px; /* Adjusted margin for smaller screens */
+    margin-right: 0;
+    margin-top: 0px;
+  
+  }
+  
+  .navbar-title {
+    display: block; /* Ensure the navbar title is visible on mobile */
+    font-size: 1.5em; /* Adjust font size for better mobile readability */
+    margin-top: 0px;
+    margin-left:50px; /* Add some spacing from the logo */
+  }
+  
+ 
+}
+
+
 
 @media (max-width: 768px) {
   .mobile-dashboard-toggle {
@@ -150,4 +181,58 @@
 }
 
 
+
+/* Custom Navbar */
+.custom-navbar {
+  background: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+
+.custom-navbar.opaque {
+  background: linear-gradient(to right, rgba(28, 35, 49, 0.9), rgba(58, 123, 213, 0.9), rgba(137, 207, 240, 0.9));
+}
+
+/* Logo and Links Container */
+.logo-container,
+.links-button-section {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+.navbar-logo {
+  height: 70px;
+  margin-right: 50px;
+}
+
+/* Responsive Styles */
+/* For tablets */
+@media (max-width: 768px) {
+  .navbar-logo {
+    height: 40px;
+    margin-left: 200px;
+    margin-right: 0;
+  }
+}
+
+/* For mobile phones */
+@media (max-width: 480px) {
+  .navbar-logo {
+    height: 30px;
+    margin-left: 20px; /* Adjusted margin for smaller screens */
+    margin-right: 0;
+  }
+  
+  /* Adjust your link styles for mobile */
+  .link {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
 
