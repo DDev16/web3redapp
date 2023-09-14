@@ -2,10 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { Container, Nav, Navbar as  Button, Dropdown } from 'react-bootstrap'; // Import Nav and Navbar components
 import { Link } from 'react-router-dom'; // Import Link component
 import logo from '../assets/logo.png';
-import { useWeb3 } from '../../web3Context';
+import Connect from "../../components/Utils/Connect.js"
 
 function Navbar() {
-  const { web3, account } = useWeb3();
   const [isOpaque, setIsOpaque] = useState(false);
 
   useEffect(() => {
@@ -26,19 +25,7 @@ function Navbar() {
 
   const navbarClass = `custom-navbar ${isOpaque ? 'opaque' : ''}`;
 
-  const handleConnect = async () => {
-    if (!web3) {
-      alert('No Ethereum provider detected. Please install MetaMask.');
-      return;
-    }
-
-    try {
-      await window.ethereum.request({ method: 'eth_requestAccounts' });
-    } catch (error) {
-      console.error('Error connecting to Web3:', error);
-    }
-  };
-
+ 
   return (
     <nav className={navbarClass}>
       <Container>
@@ -61,54 +48,43 @@ function Navbar() {
 
                     <Nav className="link">
                         <Link to="/" className="nav-link">
-                            Home
+                            Buy
                         </Link>
                         <Link to="/properties" className="nav-link">
-                            Properties
+                            Rent
                         </Link>
                         <Link to="/agents" className="nav-link">
-                            Agents
+                            Sell
                         </Link>
-                        <Link to="/contact" className="nav-link">
-                            Contact
+                        <Link to="/agents" className="nav-link">
+                            Invest
                         </Link>
-                        <Link to="/contact" className="nav-link">
-                            Learning
-                        </Link>
-                        <Link to="/contact" className="nav-link">
-                            Home Valuation
-                        </Link>
+                       
 
 
-                        <Dropdown>
-    <Dropdown.Toggle variant="info" id="dropdown-basic" className="btn-outline-light">
-        Buy/Rent/Sell
-    </Dropdown.Toggle>
-
-    <Dropdown.Menu>
-        <Dropdown.Item className="bg-light" as={Link} to="/manage-account">Buy</Dropdown.Item>
-        <Dropdown.Item className="bg-light" as={Link} to="/check-balance">Rent</Dropdown.Item>
-        <Dropdown.Item className="bg-light" as={Link} to="/manage-listings">Sell</Dropdown.Item>
-        <Dropdown.Item className="bg-light" as={Link} to="/favorites">Fractionalize</Dropdown.Item>
-    </Dropdown.Menu>
-</Dropdown>
-
+                       
 <Dropdown>
     <Dropdown.Toggle variant="info" id="dropdown-basic" className="btn-outline-light">
         Menu
     </Dropdown.Toggle>
 
     <Dropdown.Menu>
+        <Dropdown.Item className="bg-light" as={Link} to="/">Home</Dropdown.Item>
+        <Dropdown.Item className="bg-light" as={Link} to="/properties">Properties</Dropdown.Item>
+        <Dropdown.Item className="bg-light" as={Link} to="/manage-listings">Agents</Dropdown.Item>
+        <Dropdown.Item className="bg-light" as={Link} to="/favorites">Contact</Dropdown.Item>
+        <Dropdown.Item className="bg-light" as={Link} to="/favorites">Learning</Dropdown.Item>
+        <Dropdown.Item className="bg-light" as={Link} to="/favorites">Home Evaluation</Dropdown.Item>
+
        
         <Dropdown.Item className="bg-light" as={Link} to="/sign-in">Sign in</Dropdown.Item>
     </Dropdown.Menu>
 </Dropdown>
                         
-                        <Button variant="outline-light" className="ms-2" onClick={handleConnect}>
-                            {account ? 'Connected' : 'Connect'}
-                        </Button>
+<Connect />
 
                     </Nav>
+                    
             </Container>
     </nav>
     );

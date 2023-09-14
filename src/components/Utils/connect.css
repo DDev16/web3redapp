@@ -1,0 +1,62 @@
+/* ConnectWalletButton.css */
+
+.wallet-button {
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    width: 85px;
+    margin-left: 0px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(135deg, #007bff, #0056b3);
+    color: #fff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    outline: none;
+    margin-left: 30px;
+}
+
+.wallet-button:hover {
+    background-image: linear-gradient(135deg, #0056b3, #003b7c);
+    transform: translateY(-2px);
+}
+
+.wallet-button.disconnect {
+    background-image: linear-gradient(135deg, #dc3545, #c82333);
+}
+
+.wallet-button.disconnect:hover {
+    background-image: linear-gradient(135deg, #c82333, #a71d2a);
+}
+
+.wallet-button.connecting {
+    background-color: #ffc107;
+    color: #212529;
+    cursor: not-allowed;
+}
+
+/* Icon styling */
+.wallet-button i {
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+/* Additional button shadow on hover for a lift effect */
+.wallet-button:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Styles for Smaller Screens */
+@media (max-width: 768px) {
+    .wallet-button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .wallet-button i {
+        font-size: 16px;
+    }
+}

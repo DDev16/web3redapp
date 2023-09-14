@@ -1,0 +1,139 @@
+/* Define CSS styles for the class names used in your React code */
+
+
+
+
+/* Styles for the "Create Listing for Sale" header */
+h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Styles for the location form and its inputs */
+.location-form {
+    margin-bottom: 30px;
+}
+
+.location-input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Styles for the details form and its inputs */
+.details-form {
+    margin-bottom: 30px;
+}
+
+.details-label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.details-input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.details-checkbox {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* Styles for the amenities form and its checkboxes */
+.amenities-form {
+    margin-bottom: 30px;
+}
+
+.amenities-checkboxes {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.amenity-checkbox {
+    flex: 0 0 48%;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+/* Styles for the utilities form and its checkboxes */
+.utilities-form {
+    margin-bottom: 30px;
+}
+
+.utilities-checkboxes {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.utility-checkbox {
+    flex: 0 0 48%;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+/* Styles for the other features form and its checkboxes */
+.other-features-form {
+    margin-bottom: 30px;
+}
+
+.other-features-checkboxes {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.other-feature-checkbox {
+    flex: 0 0 48%;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+/* Styles for the royalty and legal jurisdiction inputs */
+.royalty,
+input[type="text"] {
+    margin-bottom: 30px;
+    font-size: 16px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+/* Styles for the Create Listing button */
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 15px 25px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Styles for the error message */
+.error-message {
+    color: red;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 10px;
+}

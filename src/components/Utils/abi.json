@@ -1,0 +1,1673 @@
+[
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "approved",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "Approval",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "operator",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "bool",
+				"name": "approved",
+				"type": "bool"
+			}
+		],
+		"name": "ApprovalForAll",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "approve",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "buy",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "cancelRentListing",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "cancelSale",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"components": [
+					{
+						"internalType": "string",
+						"name": "title",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "propertyMedia",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "propertyAddress",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "county",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "state",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "zip",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "country",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "latitude",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "longitude",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "city",
+						"type": "string"
+					}
+				],
+				"internalType": "struct RealEstateContract.Location",
+				"name": "_location",
+				"type": "tuple"
+			},
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "sizeInFt2",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "lotSizeInFt2",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "rooms",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "bathrooms",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "garages",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "bedrooms",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "yearBuilt",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "basement",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "homeownersAssociationFee",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "listedIn",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "category",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "floors",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "propertyStatus",
+						"type": "string"
+					}
+				],
+				"internalType": "struct RealEstateContract.PropertyDetails",
+				"name": "_details",
+				"type": "tuple"
+			},
+			{
+				"components": [
+					{
+						"internalType": "bool",
+						"name": "equippedKitchen",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "gym",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "laundry",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "mediaRoom",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "backYard",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "basketballCourt",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "frontYard",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "garageAttached",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "hotBath",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "pool",
+						"type": "bool"
+					}
+				],
+				"internalType": "struct RealEstateContract.Amenities",
+				"name": "_amenities",
+				"type": "tuple"
+			},
+			{
+				"components": [
+					{
+						"internalType": "bool",
+						"name": "centralAir",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "electricity",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "heating",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "naturalGas",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "ventilation",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "water",
+						"type": "bool"
+					}
+				],
+				"internalType": "struct RealEstateContract.Utilities",
+				"name": "_utilities",
+				"type": "tuple"
+			},
+			{
+				"components": [
+					{
+						"internalType": "bool",
+						"name": "chairAccessible",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "elevator",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "fireplace",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "smokeDetectors",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "washerAndDryer",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "wifi",
+						"type": "bool"
+					}
+				],
+				"internalType": "struct RealEstateContract.OtherFeatures",
+				"name": "_otherFeatures",
+				"type": "tuple"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_royaltyRate",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "_legalJurisdiction",
+				"type": "string"
+			}
+		],
+		"name": "createListing",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "endRent",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_price",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_period",
+				"type": "uint256"
+			}
+		],
+		"name": "listForRent",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_price",
+				"type": "uint256"
+			}
+		],
+		"name": "listForSale",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "previousOwner",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "OwnershipTransferred",
+		"type": "event"
+	},
+	{
+		"inputs": [],
+		"name": "pause",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			}
+		],
+		"name": "Paused",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "PropertyBought",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "price",
+				"type": "uint256"
+			}
+		],
+		"name": "PropertyListed",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "renter",
+				"type": "address"
+			}
+		],
+		"name": "PropertyRented",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "soldPrice",
+				"type": "uint256"
+			}
+		],
+		"name": "PropertySold",
+		"type": "event"
+	},
+	{
+		"inputs": [],
+		"name": "renounceOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "rent",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "RentEnded",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "safeTransferFrom",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bytes",
+				"name": "data",
+				"type": "bytes"
+			}
+		],
+		"name": "safeTransferFrom",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "operator",
+				"type": "address"
+			},
+			{
+				"internalType": "bool",
+				"name": "approved",
+				"type": "bool"
+			}
+		],
+		"name": "setApprovalForAll",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_commissionRate",
+				"type": "uint256"
+			}
+		],
+		"name": "setCommissionRate",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_taxAccount",
+				"type": "address"
+			}
+		],
+		"name": "setTaxAccount",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_taxRate",
+				"type": "uint256"
+			}
+		],
+		"name": "setTaxRate",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "Transfer",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "transferFrom",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "transferOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "unpause",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			}
+		],
+		"name": "Unpaused",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_user",
+				"type": "address"
+			},
+			{
+				"internalType": "bool",
+				"name": "_kycStatus",
+				"type": "bool"
+			}
+		],
+		"name": "updateKyc",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			},
+			{
+				"components": [
+					{
+						"internalType": "string",
+						"name": "title",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "propertyMedia",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "propertyAddress",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "county",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "state",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "zip",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "country",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "latitude",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "longitude",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "city",
+						"type": "string"
+					}
+				],
+				"internalType": "struct RealEstateContract.Location",
+				"name": "_location",
+				"type": "tuple"
+			},
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "sizeInFt2",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "lotSizeInFt2",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "rooms",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "bathrooms",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "garages",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "bedrooms",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "yearBuilt",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "basement",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "homeownersAssociationFee",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "listedIn",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "category",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "floors",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "propertyStatus",
+						"type": "string"
+					}
+				],
+				"internalType": "struct RealEstateContract.PropertyDetails",
+				"name": "_details",
+				"type": "tuple"
+			},
+			{
+				"components": [
+					{
+						"internalType": "bool",
+						"name": "equippedKitchen",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "gym",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "laundry",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "mediaRoom",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "backYard",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "basketballCourt",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "frontYard",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "garageAttached",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "hotBath",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "pool",
+						"type": "bool"
+					}
+				],
+				"internalType": "struct RealEstateContract.Amenities",
+				"name": "_amenities",
+				"type": "tuple"
+			},
+			{
+				"components": [
+					{
+						"internalType": "bool",
+						"name": "centralAir",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "electricity",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "heating",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "naturalGas",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "ventilation",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "water",
+						"type": "bool"
+					}
+				],
+				"internalType": "struct RealEstateContract.Utilities",
+				"name": "_utilities",
+				"type": "tuple"
+			},
+			{
+				"components": [
+					{
+						"internalType": "bool",
+						"name": "chairAccessible",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "elevator",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "fireplace",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "smokeDetectors",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "washerAndDryer",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "wifi",
+						"type": "bool"
+					}
+				],
+				"internalType": "struct RealEstateContract.OtherFeatures",
+				"name": "_otherFeatures",
+				"type": "tuple"
+			}
+		],
+		"name": "updateListing",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_price",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_period",
+				"type": "uint256"
+			}
+		],
+		"name": "updateRental",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			}
+		],
+		"name": "balanceOf",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "commissionRate",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "getApproved",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "operator",
+				"type": "address"
+			}
+		],
+		"name": "isApprovedForAll",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "kycCompleted",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "name",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "ownerOf",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "paused",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "properties",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "string",
+						"name": "title",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "propertyMedia",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "propertyAddress",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "county",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "state",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "zip",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "country",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "latitude",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "longitude",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "city",
+						"type": "string"
+					}
+				],
+				"internalType": "struct RealEstateContract.Location",
+				"name": "location",
+				"type": "tuple"
+			},
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "sizeInFt2",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "lotSizeInFt2",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "rooms",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "bathrooms",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "garages",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "bedrooms",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "yearBuilt",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "basement",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "homeownersAssociationFee",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "listedIn",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "category",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "floors",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "propertyStatus",
+						"type": "string"
+					}
+				],
+				"internalType": "struct RealEstateContract.PropertyDetails",
+				"name": "details",
+				"type": "tuple"
+			},
+			{
+				"components": [
+					{
+						"internalType": "bool",
+						"name": "equippedKitchen",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "gym",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "laundry",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "mediaRoom",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "backYard",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "basketballCourt",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "frontYard",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "garageAttached",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "hotBath",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "pool",
+						"type": "bool"
+					}
+				],
+				"internalType": "struct RealEstateContract.Amenities",
+				"name": "amenities",
+				"type": "tuple"
+			},
+			{
+				"components": [
+					{
+						"internalType": "bool",
+						"name": "centralAir",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "electricity",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "heating",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "naturalGas",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "ventilation",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "water",
+						"type": "bool"
+					}
+				],
+				"internalType": "struct RealEstateContract.Utilities",
+				"name": "utilities",
+				"type": "tuple"
+			},
+			{
+				"components": [
+					{
+						"internalType": "bool",
+						"name": "chairAccessible",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "elevator",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "fireplace",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "smokeDetectors",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "washerAndDryer",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "wifi",
+						"type": "bool"
+					}
+				],
+				"internalType": "struct RealEstateContract.OtherFeatures",
+				"name": "otherFeatures",
+				"type": "tuple"
+			},
+			{
+				"internalType": "address payable",
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"internalType": "address payable",
+				"name": "originalOwner",
+				"type": "address"
+			},
+			{
+				"internalType": "bool",
+				"name": "forSale",
+				"type": "bool"
+			},
+			{
+				"internalType": "uint256",
+				"name": "price",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "royaltyRate",
+				"type": "uint256"
+			},
+			{
+				"components": [
+					{
+						"internalType": "bool",
+						"name": "isRented",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "rentalPrice",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "rentalPeriod",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "renter",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "startRentDate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "endRentDate",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct RealEstateContract.Rental",
+				"name": "rental",
+				"type": "tuple"
+			},
+			{
+				"internalType": "string",
+				"name": "legalJurisdiction",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes4",
+				"name": "interfaceId",
+				"type": "bytes4"
+			}
+		],
+		"name": "supportsInterface",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "symbol",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "taxAccount",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "taxRate",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "tokenURI",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
